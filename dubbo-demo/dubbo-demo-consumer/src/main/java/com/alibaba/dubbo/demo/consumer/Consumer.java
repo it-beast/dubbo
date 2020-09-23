@@ -29,16 +29,19 @@ public class Consumer {
         context.start();
         DemoService demoService = (DemoService) context.getBean("demoService"); // get remote service proxy
 
-        while (true) {
-            try {
-                Thread.sleep(1000);
-                String hello = demoService.sayHello("world"); // call remote method
-                System.out.println(hello); // get result
+        String hello = demoService.sayHello("world"); // 执行远程方法
+        System.out.println( hello ); // 显示调用结果
 
-            } catch (Throwable throwable) {
-                throwable.printStackTrace();
-            }
-        }
+//        while (true) {
+//            try {
+//                Thread.sleep(1000);
+//                String hello = demoService.sayHello("world"); // call remote method
+//                System.out.println(hello); // get result
+//
+//            } catch (Throwable throwable) {
+//                throwable.printStackTrace();
+//            }
+//        }
 
     }
 }
